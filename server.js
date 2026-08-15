@@ -204,7 +204,8 @@ app.get('/', (req, res) => {
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
             if (data.type === 'ack') {
-                updateStatus(`[${data.action.toUpperCase()}]: ${data.message}`);
+                   updateStatus('[' + data.action.toUpperCase() + ']: ' + data.message)
+
             }
         };
 
