@@ -76,17 +76,17 @@ app.post('/api/validate-key', (req, res) => {
 });
 
 // Rota: Status do Proxy
-app.get('/api/status', (req, res) => {
-    res.json({
-        status: 'online',
-        proxies: validKeys.size,
-        uptime: process.uptime()
-    });
+app.get('/', (req, res) => {
+    res.send(
+'<!DOCTYPE html>' +
+'<html lang="pt-BR">' +
+'<head>'
+     );
 });
 
 // --- 3. Servir o Painel (HTML Inline para evitar erros de rota no Render) ---
 app.get('/', (req, res) => {
-    res.send(`
+    res.send(
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
